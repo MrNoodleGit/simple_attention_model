@@ -7,8 +7,6 @@ import glob
 # generate less params if it's a test run
 real_run = False
 
-
-
 ## this generates parameter values for the main model pipeline
     
 # empty all files first
@@ -18,10 +16,10 @@ for f in files:
 
 # parameters
 if real_run:
-    param_dict = {'mean_mu': np.arange(-1, 1, 0.2).tolist(),
-                'mean_sd': np.arange(1, 4, 0.5).tolist(),
-                'sd_scale': np.arange(2, 7, 0.5).tolist(),
-                'noise_scale': np.arange(0.1, 4, 0.5).tolist()}
+    param_dict = {'mean_mu': np.arange(-1, 1, 0.5).tolist(),
+                'mean_sd': np.arange(1, 4, 1).tolist(),
+                'sd_scale': np.arange(2, 7, 1).tolist(),
+                'noise_scale': np.arange(0.1, 3.1, 1).tolist()}
 else:
     param_dict = {'mean_mu': [-0.3,0.3],
                 'mean_sd': [1],
