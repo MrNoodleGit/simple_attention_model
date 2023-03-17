@@ -13,7 +13,7 @@ def generate_data(sim_settings):
         """generate data for model to see"""
 
         # preallocate sim data to appropriate size
-        sim_data = np.empty(sim_settings['num_model_runs'], 
+        sim_data = np.empty(sim_settings['num_model_runs'], # TODO remove this dimension
                         len(sim_settings['deviant_pos']), 
                             sim_settings['num_features'], 
                             sim_settings['max_num_samples'])
