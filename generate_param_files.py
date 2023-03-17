@@ -5,7 +5,7 @@ import os
 import glob
 
 # generate less params if it's a test run
-real_run = False
+real_run = True
 
 ## this generates parameter values for the main model pipeline
     
@@ -30,6 +30,7 @@ all_params_combinations = itertools.product(*list(param_dict.values()))
 
 # write param value files
 for param_idx, combination in enumerate(list(all_params_combinations)):
+    print('test')
     with open('params/param_vals/params' + str(param_idx) + '.csv', 'w') as myfile:
         wr = csv.writer(myfile)
         wr.writerow(list(combination))

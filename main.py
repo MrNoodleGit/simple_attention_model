@@ -14,19 +14,26 @@ from model_scripts.helperfuncs.save_model_outputs import save_plots
 def run_model(args): 
 
     # get parameters 
-    params = get_params(args.param_names_path, args.param_values_path) 
+    params = get_params(args.param_names_path, args.param_values_path) #DONE
 
     # get sim settings 
-    sim_settings = get_sim_settings(args.sim_settings_path) 
+    sim_settings = get_sim_settings(args.sim_settings_path) #DONE
     
     # prepare data dict 
+    #TODO
+    #should check sim settings to choose between generating random data or get data from the embeddings
     data = prep_data(params, sim_settings)
 
     # generate prior samples
+    # TODO
+    # -get the code from OLD action loop notebook
+    # -we need this just for the first step so we can compare prior and posterior
     prior_samples = get_prior_samples(params)
 
     # run main loop and return model behavior
-    model_behavior = main_loop(params, data, prior_samples)
+    # TODO
+    # - get code from action loop and numpyro_gpu_script
+    model_behavior = main_loop(params, data, prior_samples, num_model_runs)
     
     # save model behaviors
     if args.save_behavior:
